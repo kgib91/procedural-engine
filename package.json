@@ -1,0 +1,49 @@
+{
+  "name": "proc-mod",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "antlr4ts": "antlr4ts -visitor ./src/mod/ModLexer.g4 -o ./src/mod && antlr4ts -visitor ./src/mod/ModParser.g4 -o ./src/mod",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/d3": "^5.0.0",
+    "@types/react": "^16.4.1",
+    "@types/react-dom": "^16.0.6",
+    "antlr4ts": "^0.4.1-alpha.0",
+    "csg": "^1.0.1",
+    "d3": "^5.5.0",
+    "goblinphysics": "^0.9.2",
+    "golden-layout": "^1.5.9",
+    "react": "^16.4.1",
+    "react-codemirror": "^1.0.0",
+    "react-dat-gui": "^1.0.2",
+    "react-dom": "^16.4.1",
+    "react-splitter-layout": "^3.0.0",
+    "three": "^0.93.0",
+    "three-effectcomposer-es6": "0.0.4",
+    "three-js-csg": "^72.0.0",
+    "three-transform-controls": "^1.0.4"
+  },
+  "devDependencies": {
+    "@types/codemirror": "0.0.57",
+    "@types/react-codemirror": "^1.0.1",
+    "@types/three": "^0.92.11",
+    "antlr4ts-cli": "^0.4.0-alpha.4",
+    "awesome-typescript-loader": "^5.2.0",
+    "css-loader": "^0.28.11",
+    "extract-text-webpack-plugin": "^2.1.2",
+    "imports-loader": "^0.8.0",
+    "mini-css-extract-plugin": "^0.4.0",
+    "node-sass": "^4.9.0",
+    "sass-loader": "^7.0.3",
+    "source-map-loader": "^0.2.3",
+    "style-loader": "^0.21.0",
+    "typescript": "^2.9.2",
+    "webpack": "^4.12.1",
+    "webpack-cli": "^3.0.8"
+  }
+}
