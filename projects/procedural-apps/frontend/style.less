@@ -1,0 +1,594 @@
+@import "~file-icons/styles/fonts";
+@import "~file-icons/styles/icons";
+@import "~bootstrap/less/bootstrap";
+@import "~codemirror/lib/codemirror.css";
+@import "~node-mathquill/build/mathquill.css";
+@import "~codemirror/theme/material.css";
+@import "~font-awesome/less/font-awesome";
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+[class*='-icon'] {
+    zoom: 0.95;
+}
+
+.list-group {
+    padding-left: 18px;
+    background: #252526;
+    margin-bottom: 0;
+    box-sizing: border-box;
+}
+
+.dragObject {
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    border: 3px dashed rgba(255, 255, 255, 1);
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 2mm;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+
+    &.nestable {
+        background: rgba(0, 255, 0, 0.25);
+        border: 3px dashed rgba(0, 255, 0, 1);
+    }
+}
+
+.explorer {
+    -webkit-user-select: none;
+    -moz-user-select: -moz-none;
+     -ms-user-select: none;
+         user-select: none;
+
+    overflow-y: auto;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #1E1E1F;
+
+    label {
+        color: #fff;
+        padding: 2mm;
+    }
+
+    .list-group {
+        padding: 2mm;
+    }
+}
+
+.docker-component {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+
+.icon {
+    cursor: pointer;
+}
+
+.jumbotron {
+    zoom: 0.75;
+}
+
+.clearfix {
+    clear: both;
+}
+
+.tab-content {
+    background:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAQUlEQVQoU2M0MzP7/+HDBwZ0ICAgABZiVFNT+49LEqsCmE6QJMhkFBPQJVFMwCYJV4BLEqwA5AuYI7H5Bq4Al1cBruAhIc8DASsAAAAASUVORK5CYII=') repeat;
+}
+
+.editor {
+    overflow: hidden;
+    .CodeMirror {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: initial !important;
+    }
+    
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    
+    > .tab-content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 8mm;
+    }
+
+    > footer {
+        position: absolute;
+        left: 0;
+        height: 8mm;
+        right: 0;
+        bottom: 0;
+    }
+}
+
+.content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+
+    &.horizontal {
+        > .a {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100mm;
+            left: 0;
+        }
+
+        > .b {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 100mm;
+            right: 0;
+        }
+    }
+    
+    &.vertical-top {
+        > .a {
+            position: absolute;
+            top: 0;
+            height: 10mm;
+            left: 0;
+            right: 0;
+        }
+
+        > .b {
+            position: absolute;
+            left: 0;
+            top: 10mm;
+            right: 0;
+            bottom: 0;
+        }
+    }
+}
+
+.breadcrumb {
+    background-color: transparent;
+}
+
+.list-group-item {
+    border: none;
+    padding: 2px;
+    color: #bcbcbc !important;
+    background: transparent;
+    border-radius: 0 !important;
+
+    &:active,
+    &.active {
+        & .icon-left {
+            color: #fff !important;
+        }
+        color: #fff !important;
+    }
+
+    &:hover {
+        background-color: #333 !important;
+    }
+}
+
+.spacer {
+    display: block;
+    width: 100%;
+    height: 5mm;
+    line-height: 5mm;
+    background: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+
+    &.add {
+        background-color: rgba(128, 128, 128, 0.1);
+        margin-top: 1mm;
+        &:hover {
+            cursor: pointer;
+            vertical-align: middle;
+            color: yellow;
+            text-shadow: 0 0 5mm lightgray;
+            .fa;
+            text-align: center;
+            &::before {
+                content: "\f067";
+                vertical-align: middle;
+            }
+        }
+    }
+
+    &.down {
+        margin-bottom: 1mm;
+        color: black;
+        text-shadow: 0 0 5mm lightgray;
+        .fa;
+        text-align: center;
+        &::before {
+            content: "\f078";
+            vertical-align: middle;
+        }
+    }
+}
+
+.module {
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.25);
+    padding: 1mm;
+}
+
+.module-action {
+    display: inline-block;
+    padding: 1mm;
+    margin: 1mm;
+    border-radius: 1mm;
+    cursor: move;
+
+    &.action {
+        border: 1px solid gold;
+        color: gold;
+    }
+
+    &.prototype {
+        border: 1px solid lightgray;
+        color: lightgray;
+    }
+
+    &.region {
+        border: 1px solid cornflowerblue;
+        color: white;
+    }
+
+    &.event {
+        border: 1px solid lightgreen;
+        color: lightgreen;
+    }
+
+    &.variable {
+        border: 1px solid cornflowerblue;
+        color: cornflowerblue;
+    }
+}
+
+.workflow {
+    -webkit-user-select: none;
+    -moz-user-select: -moz-none;
+     -ms-user-select: none;
+         user-select: none;
+
+    svg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .workflow-node {
+        position: relative;
+        z-index: 0; 
+        box-shadow: 0 0 5mm rgba(0, 0, 0, 0.5);
+        &:not(.sticky) {
+            top: 0 !important;
+            left: 0 !important;
+        }
+
+        .collapsed {
+            position: absolute;
+            right: -2mm;
+            top: 3mm;
+            opacity: 0;
+            * {
+                display: none;
+            }
+        }
+
+
+        &.sticky {   
+            position: absolute;
+        }
+
+        padding: 1mm;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        border-radius: 1mm;
+
+        &.type-action {
+            background: -webkit-linear-gradient(gold,orange);
+            background: -o-linear-gradient(gold,orange);
+            background: -moz-linear-gradient(gold,orange);
+            background: linear-gradient(gold,orange);
+            color: #000;
+        }
+
+        &.type-region {
+            background: none !important;
+            border: 1px solid cornflowerblue;
+            color: #fff;
+            > .workflow-node-name {
+                font-weight: bold;
+            }
+
+            &.contract_schema {
+                > .prototype_container > .node-drop-receiver {
+                    background: rgba(0, 0, 0, 0.1);
+                    border: 1px solid rgba(0, 0, 0, 0.25);
+                    border-radius: 2mm;
+                    -webkit-border-radius: 2mm;
+                    -o-border-radius: 2mm;
+                }
+            }
+        }
+
+        &.type-prototype {
+            padding: 2mm;
+            background: -webkit-linear-gradient(grey,transparent);
+            background: -o-linear-gradient(grey,transparent);
+            background: -moz-linear-gradient(grey,transparent);
+            background: linear-gradient(grey,transparent);
+            color: #fff;
+            > .workflow-node-name {
+                font-weight: bold;
+            }
+
+            &.mithril_dom {
+                border: 1px solid yellow;
+                background: transparent;
+                color: yellow;
+            }
+        }
+
+        &.type-variable {
+            background: -webkit-linear-gradient(lightblue, cornflowerblue);
+            background: -o-linear-gradient(lightblue, cornflowerblue);
+            background: -moz-linear-gradient(lightblue, cornflowerblue);
+            background: linear-gradient(lightblue, cornflowerblue);
+            color: black;
+            > .workflow-node-name {
+                font-weight: bold;
+            }
+        }
+
+        &.type-event {
+            background: -webkit-linear-gradient(lime,green);
+            background: -o-linear-gradient(lime,green);
+            background: -moz-linear-gradient(lime,green);
+            background: linear-gradient(lime,green);
+            color: black;
+        }
+
+        .handle {
+            cursor: move;
+            width: 100%;
+            margin-top: -2mm;
+            height: 2mm;
+            text-align: center;
+            border-radius: 2mm;
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+
+        .workflow-node-name {
+            cursor: default;
+            margin-bottom: 2mm;
+            font-family: 'Open Sans', sans-serif;
+            text-align: center;
+            font-size: 12px;
+            font-weight: 400;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            li {
+                margin: 0;
+                padding: 0;
+            }
+        }
+
+        .pull-left {
+            li {
+                text-align: left;
+                font-size: 10px;
+            }
+            .workflow-node-socket {
+                text-align: right;
+                margin-left: -3mm;
+                .default-value {
+                    padding-right: 2mm;
+                    margin-left: -200px;
+                    margin-top: -1.5mm;
+                }
+            }
+        }
+
+        .pull-right {
+            li {
+                text-align: right;
+                font-size: 10px;
+            }
+            .workflow-node-socket {
+                text-align: left;
+                margin-right: -3mm;
+                .default-value {
+                    padding-left: 5mm;
+                    .default-value-tooltip {
+                        padding-left: 2mm;
+                    }
+                }
+            }
+        }
+
+        .workflow-node-socket {
+            z-index: 20;
+            box-shadow: 0 0 1mm black;
+            background-color: white;
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 6px;
+
+            .default-value {
+                width: 200px;
+                font-size: 10px;
+
+                .default-value-tooltip {
+                    cursor: default;
+                    border: 1px solid transparent;
+                    box-sizing: border-box;
+                    -moz-box-sizing: border-box;
+                    -webkit-box-sizing: border-box;
+                    -ms-box-sizing: border-box;
+
+                    &:hover {
+                        border: 1px solid rgba(255, 255, 255, 0.25)
+                    }
+                    padding: 1px;
+                    color: #fff;
+                    border-radius: 1mm;
+                    background-color: rgba(255, 255, 255, 0.125);
+                    box-shadow: 0 0 5mm rgba(255, 255, 255, 0.25);
+                }
+            }
+        }
+        
+        &.active {
+            border-color: #337ab7;
+        }
+    }
+}
+
+.color {
+    &.orange {
+        color: orange
+    }
+}
+
+.nav-top {
+    background: #363638;
+    color: #bcbcbc !important;
+    height: 10mm;
+    line-height: 10mm !important;
+    border: 0 !important;
+    .nav-item {
+        &:not(.active):not(:active) {
+            a {
+                &:hover {
+                    background: none !important;
+                }
+            }
+        }
+        &.active,
+        &:active {
+            a {
+                i {
+                    color: #fff !important;
+                }
+                background-color: #337ab7 !important;
+                color: #fff !important;
+            }
+        }
+        a {
+            box-sizing: border-box;
+            color: #bcbcbc !important;
+            padding: 0 15px !important;
+            border-radius: 0 !important;
+            line-height: 10mm !important;
+            height: 10mm;
+            border: 0 !important;
+            border-right: 1px solid #444 !important;
+        }
+    }
+}
+
+
+.nav-bottom {
+    background: #363638;
+    color: #bcbcbc !important;
+    height: 8mm;
+    line-height: 8mm !important;
+    border: 0 !important;
+    .nav-item {
+        &:not(.active):not(:active) {
+            a {
+                &:hover {
+                    background: none !important;
+                }
+            }
+        }
+        &.active,
+        &:active {
+            a {
+                background-color: #000000 !important;
+                color: #fff !important;
+            }
+        }
+        a {
+            box-sizing: border-box;
+            color: #bcbcbc !important;
+            padding: 0 15px !important;
+            border-radius: 0 !important;
+            line-height: 8mm !important;
+            height: 8mm;
+            border: 0 !important;
+            border-right: 1px solid #444 !important;
+        }
+    }
+}
+
+.list-group {
+    border-left: 1px dashed #333;
+}
+
+.nav-item:not(:active):not(.active):not(:hover) .tab-activated-visibility {
+    visibility: hidden;
+}
+
+.icon-left {
+    margin-right: 2mm;
+}
+
+.yellow {
+    color: #cbcb3e;
+}
+
+.blue {
+    color: #368bba;
+}
+
+.orange {
+    color: #dd792c;
+}

@@ -1,0 +1,15 @@
+{
+  "name": "backend",
+  "version": "0.0.1",
+  "description": "backend for visualized code demonstration and learning",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha",
+    "start": "nodemon --use_strict server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.4"
+  }
+}

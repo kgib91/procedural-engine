@@ -1,0 +1,71 @@
+.inspector {
+    position: absolute; 
+    right: 5mm;
+    bottom: 5mm;
+    color: #fff;
+    padding: 2mm;
+    z-index: 100;
+}
+
+.inspectorTable {
+    width: 100%;
+    border-spacing: initial;
+}
+
+.numberField {
+    &.dragging {
+        input {
+            border: 1px solid rgb(69, 113, 180) !important;
+        }
+    }
+    
+    > input {
+        -webkit-touch-callout: none !important; /* iOS Safari */
+        -webkit-user-select: none !important; /* Safari */
+        -khtml-user-select: none !important; /* Konqueror HTML */
+            -moz-user-select: none !important; /* Firefox */
+            -ms-user-select: none !important; /* Internet Explorer/Edge */
+                user-select: none !important; /* Non-prefixed version */
+    }
+}
+
+.propertyTable {
+    width: 100%;
+    border-spacing: initial;
+
+    .ms-ComboBox-container {
+        border: 0 !important;
+        .ms-ComboBox {
+            border: 0 !important;
+        }
+    }
+
+    .ms-TextField {
+        border: 0 !important;
+        .ms-TextField-wrapper {
+            border: 0 !important;
+            .ms-TextField-fieldGroup {
+                border: 0 !important;
+            }
+        }
+    }
+
+    .keyColumn {
+        border-right: 1px solid #333 !important;
+        background-color: #1c1c1c !important;
+        text-align: right !important;
+        padding-right: 2mm !important;
+    }
+}
+
+.expansionPanel {
+    > .title {
+        padding: 3mm;
+        background-color: #070707;
+        border-top: 1px solid #222;
+        border-bottom: 1px solid #222;
+        color: #fff;
+        font-weight: bold;
+        font-size: 12px;
+    }
+}

@@ -1,0 +1,204 @@
+$gridBackgroundColor: rgba(236, 202, 172, 0.678);
+$foregroundLineColor: rgba(251, 244, 210, 0.493);
+$backgroundLineColor: rgba(250, 225, 194, 0.849);
+
+.nodeGraph {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+
+    .nodeGraphGroup {
+        position: absolute;
+        background-color: rgba(255, 0, 255, 0.25);
+    }
+
+    // background "blue-print" pattern
+    /*
+    background:
+    linear-gradient(27deg, #151515 2.5px, transparent 2.5px) 0 2.5px,
+    linear-gradient(207deg, #151515 2.5px, transparent 2.5px) 5px 0px,
+    linear-gradient(27deg, #222 2.5px, transparent 2.5px) 0px 5px,
+    linear-gradient(207deg, #222 2.5px, transparent 2.5px) 5px 2.5px,
+    linear-gradient(90deg, #1b1b1b 5px, transparent 5px),
+    linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+    */
+    
+    background-color: #070807;
+    background-size: 10px 10px;
+
+    // links
+    .linksDisplay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 0;
+        width: 100%;
+        height: 100%;
+
+        .nodeGraphLink {
+            stroke: orange;
+            stroke-width: 5px;
+            fill: none;
+
+            &.dashed {
+                stroke: grey;
+                stroke-dasharray: 5;
+                stroke-width: 5px;
+                fill: none;
+            }
+
+            &:not(.dashed):hover {
+                cursor: pointer;
+                stroke: white;
+            }
+        }
+    }
+
+    > .node {
+        position: relative;
+        display: inline-block;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+
+        &.dragging {
+            > * {
+                opacity: 0.25;
+            }
+            border: 1mm dashed grey;
+            border-radius: 2mm;
+            -webkit-border-radius: 2mm;
+            -moz-border-radius: 2mm;
+        }
+
+        > .nodeChannelOverlay {
+            position: absolute;
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            top: 25px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+
+            > .nodeAttributes {
+                position: absolute;
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                z-index: 10;
+                &.outbound {
+                    right: -1.5mm;
+                }
+
+                &.inbound {
+                    left: -1.5mm;
+                }
+
+                &.inbound,
+                &.outbound {
+                    > li > div {
+                        display: block;
+                        background-color: black;
+                        border-radius: 2mm; 
+                        width: 2mm;
+                        height: 2mm;
+                        border: 1mm solid orange;
+                        text-align: right;
+                    }
+
+                    > li {
+                        display: block;
+                        height: 5mm;
+                        > div {
+                            position: relative;
+                            &:hover,
+                            &.selected {
+                                background-color: #000;
+                                border-color: #fff;
+                                cursor: pointer;
+                            }
+                        }
+                        &:not(:hover) > div:not(.selected):not(.forceLabel) > span {
+                            display: none;
+                        }
+
+                        > div > span {
+                            position: absolute;
+                            top: -2mm;
+                            left: 5mm;
+                            display: inline-block;
+                            background-color: rgba(0, 0, 0, 0.75);
+                            color: #fff;
+                            font-weight: bold;
+                            font-size: 10px;
+                            padding: 1mm;
+                        }
+                    }
+                }
+            }
+        }
+
+        // nodes
+        > .primitiveNode {
+            border: 2px solid #000;
+            border-radius: 2mm;
+            -webkit-border-radius: 2mm;
+            -moz-border-radius: 2mm;
+            overflow: hidden;
+            background-color: grey;
+            z-index: 1;
+            cursor: pointer;
+            
+            > span.name {
+                background-color: rgb(128, 0, 0);
+                color: #fff;
+                text-align: center;
+                font-size: 10px;
+                font-weight: bold;
+                display: block;
+                padding: 1mm;
+                cursor: move;
+                box-sizing: border-box;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                -webkit-touch-callout: none; /* iOS Safari */
+                -webkit-user-select: none; /* Safari */
+                -khtml-user-select: none; /* Konqueror HTML */
+                -moz-user-select: none; /* Firefox */
+                    -ms-user-select: none; /* Internet Explorer/Edge */
+                        user-select: none; /* Non-prefixed version */
+            }
+
+            > .previewTexture {
+                z-index: 0;
+                max-width: 96px;
+                max-height: 96px;
+                box-sizing: border-box;
+
+                > canvas {
+                    width: 100%;
+                    height: 100%;
+                }
+                > .textureDetails {
+                    user-select: none;
+                    -moz-user-select: none;
+                    -webkit-user-select: none;
+                    display: block;
+                    color: #fff;
+                    font-size: 10px;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}

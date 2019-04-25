@@ -1,0 +1,41 @@
+[
+    {
+        "name": "fluid-simulation",
+        "version": "1.0.0",
+        "provider": "LocalStorageProvider",
+        "description": "Simple fluid simulation",
+        "commands": [
+            {
+                "name": "start",
+                "node": "./src/simulation/start"
+            }
+        ],
+        "access": {
+            "path": "C:\\Users\\Family\\Desktop\\simulations\\backend\\localstorage\\fluid-simulation"
+        }
+    },
+    {
+        "name": "demonstration",
+        "version": "1.0.0",
+        "provider": "LocalStorageProvider",
+        "description": "simple demonstrations",
+        "commands": [
+            {
+                "name": "hello world",
+                "node": "./src/hello"
+            }
+        ],
+        "access": {
+            "path": "C:\\Users\\Family\\Desktop\\simulations\\backend\\localstorage\\demonstration"
+        }
+    },
+    {
+        "name": "codemap",
+        "version": "1.0.0",
+        "provider": "LocalStorageProvider",
+        "description": "Essential framework items surrounding code-map",
+        "access": {
+            "path": "C:\\Users\\Family\\Desktop\\simulations\\backend\\localstorage\\codemap"
+        }
+    }
+]

@@ -1,0 +1,66 @@
+.dockingContainer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+
+    .primary,
+    .secondary {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        overflow: auto;
+
+        > .dockingWindow {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            overflow: hidden;
+
+            > .dockingMenu {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 32px;
+                background: #444;
+                border-bottom: inset 1mm #222;
+                box-sizing: border-box;
+
+                span.windowTitle {
+                    cursor: pointer;
+                    display: inline-block;
+                    background: #222;
+                    color: #fff;
+                    font-size: 12px;
+                    height: 32px;
+                    padding-left: 3mm;
+                    padding-right: 3mm;
+                    line-height: 32px;
+                    vertical-align: middle;
+                    border-top-left-radius: 1mm;
+                    border-top-right-radius: 1mm;
+                    -moz-border-top-left-radius: 1mm;
+                    -moz-border-top-right-radius: 1mm;
+                    -webkit-border-top-left-radius: 1mm;
+                    -webkit-border-top-right-radius: 1mm;
+                }
+            }
+
+            > .windowViewport {
+                position: absolute;
+                top: 32px;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                overflow: auto;
+                background-color: #121212;
+            }
+        }
+    }
+}

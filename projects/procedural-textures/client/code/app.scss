@@ -1,0 +1,129 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif !important;
+}
+
+#root {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+}
+
+/* material UI stuff */
+.ms-ComboBox-container {
+    background-color: #121212 !important;
+    border: 1px solid #000 !important;
+    border-radius: 1mm !important;
+    -moz-border-radius: 1mm !important;
+    -webkit-border-radius: 1mm !important;
+    overflow: hidden;
+    > .ms-ComboBox {
+        background-color: #121212 !important;
+    }
+}
+
+.ms-TextField {
+    background-color: #121212 !important;
+    border: 1px solid #000 !important;
+    border-radius: 1mm !important;
+    -moz-border-radius: 1mm !important;
+    -webkit-border-radius: 1mm !important;
+    overflow: hidden;
+
+    &.is-disabled {
+        opacity: 0.25;
+    }
+}
+
+.ms-Callout {
+    border: 1px solid #000 !important;
+}
+
+.ms-ComboBox-optionsContainerWrapper,
+.ms-Slider-container,
+.ms-ContextualMenu-container,
+.ms-Toggle-background,
+.ms-Button,
+.ms-ComboBox-Input,
+.ms-TextField-field,
+.ms-Checkbox-text {
+    color: #ccc !important;
+}
+
+.ms-ComboBox-optionsContainerWrapper,
+.ms-Slider-container,
+.ms-ContextualMenu-container,
+.ms-Toggle-background,
+.ms-Button,
+.ms-ComboBox-Input,
+.ms-TextField-field {
+    background-color: #121212 !important;
+}
+
+table.inspectorTable {
+    padding: 0;
+    background-color: #333;
+    > tbody,
+    > thead {
+        padding: 0;
+        background-color: #333;
+        > tr {
+            padding: 0;
+            background-color: #333;
+            height: 32px;
+            min-height: initial;
+
+            > td,
+            > th {
+                height: 32px;
+                margin: 0;
+                color: #ccc;
+                padding: 0;
+                background-color: #333;
+                font-size: 12px;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.22);
+
+                &.keyColumn {
+                    background-color: #222;
+                    color: #fff;
+                    text-align: center;
+                    border-right: 1px solid #444 !important;
+                    border-bottom: 0 !important;
+                }
+            }
+
+            > th {
+                color: #fff;
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+.ms-Label,
+label {
+    color: #ccc !important;
+    padding-left: 3mm !important;
+    font-weight: bold !important;
+    font-size: 12px !important;
+}
+
+[class*='MuiTypography-'] {
+    color: #ccc;
+    padding-left: 3mm;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.ms-Button-icon {
+    color: #ccc;
+    fill: #ccc;
+}
+
+[class*='MuiPaper-'] {
+    margin: 0;
+}

@@ -1,0 +1,24 @@
+{
+    "owner": {
+        "name": "codemap",
+        "schema": "codemap",
+        "version": "1.0-preview"
+    },
+    "name": "hello",
+    "tokens": {
+        "html_version": "5"
+    },
+    "import": [
+        "contract",
+        "storage",
+        "framework",
+        "graphics",
+        "math",
+        "network",
+        "protocol",
+        "query",
+        "userinterface"
+    ],
+    "bindings": [],
+    "workflow": []
+}

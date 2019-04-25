@@ -1,0 +1,117 @@
+{
+    "owner": {
+        "name": "codemap",
+        "schema": "codemap",
+        "version": "1.0-preview"
+    },
+    "name": "simulation",
+    "tokens": {
+        "html_version": "5"
+    },
+    "import": [
+        "system",
+        "html5",
+        "logger",
+        "webgl",
+        "/modules/steps"
+    ],
+    "bindings": [
+        { "sourceId": 2, "source": "context", "targetId": 4, "target": "context" },
+        { "sourceId": 5, "source": "value", "targetId": 4, "target": "velocityOld" },
+        { "sourceId": 6, "source": "value", "targetId": 4, "target": "velocityNew" },
+        { "sourceId": 7, "source": "value", "targetId": 4, "target": "colorOld" },
+        { "sourceId": 8, "source": "value", "targetId": 4, "target": "colorNew" },
+        { "sourceId": 11, "source": "value", "targetId": 4, "target": "pressureOld" },
+        { "sourceId": 10, "source": "value", "targetId": 4, "target": "pressureNew" }
+    ],
+    "workflow": [
+        {
+            "id": 0,
+            "name": "Start Simulation",
+            "action": "html5.create",
+            "coord": { "x": 200, "y": 100 },
+            "forward": [
+                { "id": 1 }
+            ]
+        },
+        {
+            "id": 1,
+            "name": "Initialize",
+            "action": "system.sequence",
+            "coord": { "x": 370, "y": 50 },
+            "model": [
+                { "id": 2 },
+                { "id": 9 },
+                { "id": 3 }
+            ]
+        },
+        {
+            "id": 2,
+            "expanded": false,
+            "action": "webgl.create"
+        },
+        {
+            "id": 9,
+            "name": "Create Textures",
+            "expanded": true,
+            "action": "system.sequence",
+            "model": [  
+                { "id": 6 },
+                { "id": 5 },
+                { "id": 8 },
+                { "id": 7 },
+                { "id": 10 },
+                { "id": 11 }
+            ]
+        },
+        {
+            "id": 6,
+            "name": "Velocity New",
+            "expanded": true,
+            "action": "webgl.texture"
+        },
+        {
+            "id": 5,
+            "name": "Velocity Old",
+            "expanded": true,
+            "action": "webgl.texture"
+        },
+        {
+            "id": 8,
+            "name": "Color New",
+            "expanded": false,
+            "action": "webgl.texture"
+        },
+        {
+            "id": 7,
+            "name": "Color Old",
+            "expanded": false,
+            "action": "webgl.texture"
+        },
+        {
+            "id": 10,
+            "name": "Pressure New",
+            "expanded": false,
+            "action": "webgl.texture"
+        },
+        {
+            "id": 11,
+            "name": "Pressure Old",
+            "action": "webgl.texture"
+        },
+        {
+            "id": 3,
+            "name": "Animation Frame",
+            "action": "html5.animate",
+            "forward": [
+                { "id": 4 }
+            ]
+        },
+        {
+            "id": 4,
+            "name": "Update Simulation",
+            "action": "/modules/steps.animate",
+            "coord": { "x": 600, "y": 250 }
+        }
+    ]
+}
