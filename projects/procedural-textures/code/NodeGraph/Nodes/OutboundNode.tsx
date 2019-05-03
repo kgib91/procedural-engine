@@ -1,8 +1,9 @@
 import { PrimitiveNodeRendererProps, PrimitiveNodeRenderer, PrimitiveNode, RendererInterface } from "./PrimitiveNode";
 import React = require("react");
-import { PrimitiveNodeConfig, NodeGraphRenderer } from "../NodeGraph";
+import { PrimitiveNodeConfig } from "../NodeGraph";
 import { NodeGraphNamespace } from "../NodeGraphNamespace";
 import { NodeGraphChannelDirection } from "../NodeGraphChannel";
+import { NodeGraphRenderer } from "../NodeGraphRenderer";
 
 export interface OutboundNodeRendererProps extends PrimitiveNodeRendererProps {
     node: OutboundNode;

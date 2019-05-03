@@ -1,7 +1,8 @@
 import { PrimitiveNodeRendererProps, PrimitiveNodeRenderer, PrimitiveNode, RendererInterface } from "./PrimitiveNode";
 import React = require("react");
-import { PrimitiveNodeConfig, NodeGraphRenderer } from "../NodeGraph";
+import { PrimitiveNodeConfig } from "../NodeGraph";
 import { NodeGraphNamespace } from "../NodeGraphNamespace";
+import { NodeGraphRenderer } from "../NodeGraphRenderer";
 
 export interface TextureNodeRendererProps extends PrimitiveNodeRendererProps {
     node: TextureNode;

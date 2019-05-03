@@ -736,6 +736,7 @@ export class ObjectInspectorRenderer extends React.Component<ObjectInspectorRend
             }
         }
         if (children.length == 0) {
+            console.log('log:', this.props.type, this.props.schema, typeSchema);
             return this.renderInspectorOfType(this.props.propertyName, typeSchema, typeSchema.getName(), this.props.label);
         }
         if (this.props.path == null) {

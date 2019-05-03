@@ -1,4 +1,4 @@
-import { PrimitiveNodeConfig, NodeGraphRenderer } from "../NodeGraph";
+import { PrimitiveNodeConfig } from "../NodeGraph";
 import React = require("react");
 import { NodeGraphNamespace } from "../NodeGraphNamespace";
 import { NodeGraphChannelDirection } from "../NodeGraphChannel";
@@ -8,6 +8,7 @@ import { enumFlagsToString } from "../../EnumExtensions";
 import { RendererInterface } from "./PrimitiveNode";
 import { TextureNodeRendererProps, TextureNodeRenderer, TextureNode, TextureNodeConfig } from "./TextureNode";
 import Enumerable = require("linq");
+import { NodeGraphRenderer } from "../NodeGraphRenderer";
 
 export enum ColorMaskFlag {
     R = 1,

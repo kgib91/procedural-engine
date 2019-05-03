@@ -1,8 +1,9 @@
-import { NodeGraphAssetEventHandler, INodeState, INodeGraphRendererInterface, IVector2, NodeGraphAttributes, NodeGraph, PrimitiveNodeConfig, NodeGraphAttribute, NodeGraphRenderer, NodeGraphAssetChangedHandler, EntityHoverEventHandler, ISerializable } from "../NodeGraph";
+import { NodeGraphAssetEventHandler, INodeState, IVector2, NodeGraphAttributes, NodeGraph, PrimitiveNodeConfig, NodeGraphAttribute, NodeGraphAssetChangedHandler, EntityHoverEventHandler, ISerializable } from "../NodeGraph";
 import { IComposableNode, NodeChannelRenderer, NodeGraphChannels, NodeGraphChannelDirection, NodeGraphChannelOptions, NodeGraphChannel, ChannelMouseEventHandler } from "../NodeGraphChannel";
 import React = require("react");
 import { NodeGraphNamespace } from "../NodeGraphNamespace";
 import * as uuidv4 from "uuid/v4";
+import { INodeGraphRendererInterface, NodeGraphRenderer } from "../NodeGraphRenderer";
 
 export interface PrimitiveNodeRendererProps {
     node: PrimitiveNode;

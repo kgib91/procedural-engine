@@ -1,10 +1,11 @@
-import { NodeGraphRenderer, PrimitiveNodeConfig } from "../NodeGraph";
+import { PrimitiveNodeConfig } from "../NodeGraph";
 import React = require("react");
 import { TextureNode, TextureNodeRenderer, TextureNodeRendererState, TextureNodeRendererProps, TextureNodeConfig } from "./TextureNode";
 import Prando from "prando";
 import { NodeGraphNamespace } from "../NodeGraphNamespace";
 import { NodeGraphChannelDirection } from "../NodeGraphChannel";
 import { RendererInterface } from "./PrimitiveNode";
+import { NodeGraphRenderer } from "../NodeGraphRenderer";
 
 export interface NoiseNodeRendererProps extends TextureNodeRendererProps {
     node: NoiseNode;

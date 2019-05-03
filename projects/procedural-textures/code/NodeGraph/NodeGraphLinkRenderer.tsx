@@ -1,9 +1,10 @@
-import { IVector2, NodeGraph, ISerializable, NodeGraphAttribute, INodeGraphRendererInterface, NodeGraphRenderer, EntityHoverEventHandler } from "./NodeGraph";
+import { IVector2, NodeGraph, ISerializable, NodeGraphAttribute, EntityHoverEventHandler } from "./NodeGraph";
 import React = require("react");
 import * as uuidv4 from "uuid/v4";
 import { RendererInterface } from "./Nodes/PrimitiveNode";
 import { NodeGraphChannel } from "./NodeGraphChannel";
 import { NodeGraphNamespace } from "./NodeGraphNamespace";
+import { INodeGraphRendererInterface, NodeGraphRenderer } from "./NodeGraphRenderer";
 
 export interface NodeGraphLinkRendererProps {
     id: string;
@@ -163,7 +164,7 @@ export class NodeGraphLink implements ISerializable, INodeGraphRendererInterface
                 sourceChannel={sourceAttributeChannelNamespace}
                 targetChannel={targetAttributeChannelNamespace}
             />;
-        }
+        } 
         return null;
     }
 

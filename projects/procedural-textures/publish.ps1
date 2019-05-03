@@ -1,4 +1,4 @@
-$imageName = "arcadepro-io/procedural-geometry"
+$imageName = "arcadepro-io/procedural-textures"
 Set-Location -Path $PSScriptRoot
 
 # Stop existing running containers
@@ -13,4 +13,4 @@ Write-Host "Stopping containers with Ids:"
 . docker build -t $imageName .
 
 # Run Docker Image
-. docker run -p 8080:80 $imageName
+. docker run -p 8081:80 $imageName
